@@ -35,12 +35,12 @@ public class Fetch extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		try {
 			Connection conn=Create_Connection.cc();
 			Statement st=conn.createStatement();
-			String query="SELECT * FROM winter_internship LIMIT 10;";
+			String query="SELECT * FROM winter_internship ";
 			ResultSet rs=st.executeQuery(query);
 			ArrayList<pojo_class> fetcheddata= new ArrayList<pojo_class>();
 			
