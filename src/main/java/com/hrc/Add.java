@@ -33,7 +33,7 @@ public class Add extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -46,11 +46,7 @@ public class Add extends HttpServlet {
 		try {
 			Connection conn=Create_Connection.cc();
 			pojo_class run=new Gson().fromJson(request.getReader(),pojo_class.class);
-			String query="INSERT INTO winter_internship (business_code,cust_number,clear_date,buisness_year,\"\r\n"
-					+ "					+ \"doc_id,posting_date,document_create_date,due_in_date,invoice_currency,document_type,\"\r\n"
-					+ "					+ \"posting_id,total_open_amount,baseline_create_date,cust_payment_terms,invoice_id) \"\r\n"
-					+ "					+ \"VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-			
+			String query = "INSERT INTO winter_internship (business_code, cust_number, clear_date, buisness_year, doc_id, posting_date, document_create_date, due_in_date, invoice_currency, document_type, posting_id, total_open_amount, baseline_create_date, cust_payment_terms, invoice_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement pre_st=conn.prepareStatement(query);
 			
 			pre_st.setString(1,run.getBusiness_code());
@@ -78,4 +74,3 @@ public class Add extends HttpServlet {
 		}
 		}
 	}
-
