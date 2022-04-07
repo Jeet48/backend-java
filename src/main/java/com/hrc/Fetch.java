@@ -46,7 +46,7 @@ public class Fetch extends HttpServlet {
 			
 			while(rs.next()) {
 				pojo_class take=new pojo_class();
-				take.setSl_no(rs.getString("sl_no"));
+				take.setSl_no(rs.getInt("sl_no"));
 				take.setBusiness_code(rs.getString("business_code"));
 				take.setCust_number(rs.getString("cust_number"));
 				take.setClear_date(rs.getString("clear_date"));

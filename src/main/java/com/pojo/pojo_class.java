@@ -1,7 +1,7 @@
 package com.pojo;
 
 public class pojo_class {
-	private String sl_no;
+	private Integer sl_no;
 	private String business_code;
 	private String cust_number;
 	private String clear_date;
@@ -21,10 +21,10 @@ public class pojo_class {
 	private String invoice_id;
 	private String aging_bucket;
 	private String isOpen;
-	public String getSl_no() {
+	public int getSl_no() {
 		return sl_no;
 	}
-	public void setSl_no(String sl_no) {
+	public void setSl_no(int sl_no) {
 		this.sl_no = sl_no;
 	}
 	public String getBusiness_code() {

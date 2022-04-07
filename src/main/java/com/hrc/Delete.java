@@ -33,7 +33,7 @@ public class Delete extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class Delete extends HttpServlet {
 			String query="DELETE FROM winter_internship WHERE sl_no=? AND cust_number=?";
 			PreparedStatement pre_st=conn.prepareStatement(query);
 			
-			pre_st.setString(1, run.getSl_no());
+			pre_st.setInt(1, run.getSl_no());
 			pre_st.setString(2, run.getCust_number());
 			
 			pre_st.execute();
