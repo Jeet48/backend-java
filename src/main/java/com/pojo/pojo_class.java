@@ -1,7 +1,7 @@
 package com.pojo;
 
 public class pojo_class {
-	private Integer sl_no;
+	private String sl_no;
 	private String business_code;
 	private String cust_number;
 	private String clear_date;
@@ -21,10 +21,14 @@ public class pojo_class {
 	private String invoice_id;
 	private String aging_bucket;
 	private String isOpen;
-	public int getSl_no() {
+	private int is_deleted;
+	public int getisDeleted() {
+		return is_deleted;
+	}
+	public String getSl_no() {
 		return sl_no;
 	}
-	public void setSl_no(int sl_no) {
+	public void setSl_no(String sl_no) {
 		this.sl_no = sl_no;
 	}
 	public String getBusiness_code() {
@@ -108,8 +112,8 @@ public class pojo_class {
 	public String getTotal_open_amount() {
 		return total_open_amount;
 	}
-	public void setTotal_open_amount(String total_open_amount) {
-		this.total_open_amount = total_open_amount;
+	public void setTotal_open_amount(String total_open_amount2) {
+		this.total_open_amount = total_open_amount2;
 	}
 	public String getBaseline_create_date() {
 		return baseline_create_date;
@@ -141,5 +145,7 @@ public class pojo_class {
 	public void setIsOpen(String isOpen) {
 		this.isOpen = isOpen;
 	}
-	
+	public void setisdeleted(int is_deleted) {
+		this.is_deleted=is_deleted;
+	}
 }

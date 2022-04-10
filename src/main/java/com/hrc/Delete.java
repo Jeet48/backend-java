@@ -45,11 +45,11 @@ public class Delete extends HttpServlet {
 		try {
 			Connection conn=Create_Connection.cc();
 			pojo_class run=new Gson().fromJson(request.getReader(),pojo_class.class);
-			String query="DELETE FROM winter_internship WHERE sl_no=? AND cust_number=?";
+			String query="update winter_internship set is_deleted = 1 WHERE sl_no=?";
 			PreparedStatement pre_st=conn.prepareStatement(query);
 			
-			pre_st.setInt(1, run.getSl_no());
-			pre_st.setString(2, run.getCust_number());
+			pre_st.setString(1, run.getSl_no());
+			
 			
 			pre_st.execute();
 			response.setContentType("application/json");

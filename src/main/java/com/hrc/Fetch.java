@@ -40,13 +40,13 @@ public class Fetch extends HttpServlet {
 		try {
 			Connection conn=Create_Connection.cc();
 			Statement st=conn.createStatement();
-			String query="SELECT * FROM winter_internship ";
+			String query="SELECT * FROM winter_internship where is_deleted=0 limit 10; ;";
 			ResultSet rs=st.executeQuery(query);
 			ArrayList<pojo_class> fetcheddata= new ArrayList<pojo_class>();
 			
 			while(rs.next()) {
 				pojo_class take=new pojo_class();
-				take.setSl_no(rs.getInt("sl_no"));
+				take.setSl_no(rs.getString("sl_no"));
 				take.setBusiness_code(rs.getString("business_code"));
 				take.setCust_number(rs.getString("cust_number"));
 				take.setClear_date(rs.getString("clear_date"));
@@ -66,6 +66,7 @@ public class Fetch extends HttpServlet {
 				take.setInvoice_id(rs.getString("invoice_id"));
 				take.setIsOpen(rs.getString("isOpen"));
 				take.setAging_bucket(rs.getString("aging_bucket"));
+				take.setisdeleted(rs.getInt("is_deleted"));
 				fetcheddata.add(take);
 			}
 			

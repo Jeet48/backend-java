@@ -45,13 +45,12 @@ public class edit extends HttpServlet {
 		try {
 			Connection conn=Create_Connection.cc();
 			pojo_class run=new Gson().fromJson(request.getReader(),pojo_class.class);
-			String query="UPDATE winter_internship SET invoice_currency=?, cust_payment_terms=? WHERE cust_number=? AND doc_id=?";
+			String query="UPDATE winter_internship SET invoice_currency=?, cust_payment_terms=? WHERE sl_no=?";
 			PreparedStatement pre_st=conn.prepareStatement(query);
 			
 			pre_st.setString(1, run.getInvoice_currency());
 			pre_st.setString(2, run.getCust_payment_terms());
-			pre_st.setString(3, run.getCust_number());
-			pre_st.setString(4, run.getDoc_id());
+			pre_st.setString(3, run.getSl_no());
 			
 			pre_st.execute();
 			response.setContentType("application/json");
