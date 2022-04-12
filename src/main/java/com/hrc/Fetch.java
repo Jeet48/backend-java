@@ -40,7 +40,7 @@ public class Fetch extends HttpServlet {
 		try {
 			Connection conn=Create_Connection.cc();
 			Statement st=conn.createStatement();
-			String query="SELECT * FROM winter_internship where is_deleted=0 limit 10; ;";
+			String query="SELECT * FROM winter_internship where is_deleted=0  ;";
 			ResultSet rs=st.executeQuery(query);
 			ArrayList<pojo_class> fetcheddata= new ArrayList<pojo_class>();
 			
